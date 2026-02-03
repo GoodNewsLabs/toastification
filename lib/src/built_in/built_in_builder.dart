@@ -97,10 +97,9 @@ class BuiltInBuilder extends StatelessWidget {
     final dragToClose = this.dragToClose ?? true;
 
     final primaryColor = ColorUtils.convertToMaterialColor(this.primaryColor);
-    final backgroundColor =
-        ColorUtils.convertToMaterialColor(this.backgroundColor);
+    final backgroundColor = ColorUtils.convertToMaterialColor(this.backgroundColor);
 
-    return _BuiltInContainer(
+    return BuiltInContainer(
       item: item,
       margin: margin ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       closeOnClick: closeOnClick,
@@ -137,9 +136,7 @@ class BuiltInBuilder extends StatelessWidget {
 
   VoidCallback _onCloseButtonTap() {
     return () {
-      callbacks.onCloseButtonTap != null
-          ? callbacks.onCloseButtonTap?.call(item)
-          : _defaultCloseButtonTap();
+      callbacks.onCloseButtonTap != null ? callbacks.onCloseButtonTap?.call(item) : _defaultCloseButtonTap();
     };
   }
 
@@ -288,8 +285,9 @@ class BuiltInToastBuilder extends StatelessWidget {
 
 /// This widget help you to use the default behavior of the built-in
 /// toastification Items
-class _BuiltInContainer extends StatelessWidget {
-  const _BuiltInContainer({
+class BuiltInContainer extends StatelessWidget {
+  const BuiltInContainer({
+    super.key,
     required this.item,
     required this.margin,
     required this.closeOnClick,
