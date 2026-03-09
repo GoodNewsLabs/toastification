@@ -351,11 +351,9 @@ class BuiltInContainer extends StatelessWidget {
         item: item,
         pauseOnHover: pauseOnHover,
         dismissDirection: dismissDirection,
-        onDismissed: callbacks.onDismissed == null
-            ? null
-            : () {
-                callbacks.onDismissed?.call(item);
-              },
+        onDismissed: (direction) {
+          callbacks.onDismissed?.call(item, direction);
+        },
         child: toast,
       );
     }
@@ -375,7 +373,7 @@ class _FadeDismissible extends StatefulWidget {
 
   final ToastificationItem item;
   final bool pauseOnHover;
-  final VoidCallback? onDismissed;
+  final void Function(DismissDirection direction)? onDismissed;
   final DismissDirection? dismissDirection;
   final Widget child;
 
@@ -406,7 +404,7 @@ class _FadeDismissibleState extends State<_FadeDismissible> {
         behavior: HitTestBehavior.deferToChild,
         onDismissed: (direction) {
           // call the onDismissed callback
-          widget.onDismissed?.call();
+          widget.onDismissed?.call(direction);
 
           toastification.dismiss(widget.item, showRemoveAnimation: false);
         },

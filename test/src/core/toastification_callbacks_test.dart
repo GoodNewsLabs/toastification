@@ -7,14 +7,13 @@ import 'package:toastification/toastification.dart';
 void main() {
   group('ToastificationCallbacks', () {
     test('should create an instance with all callbacks', () {
-      final ValueChanged<ToastificationItem> onTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onCloseButtonTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onAutoCompleteCompleted =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onDismissed =
-          (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onCloseButtonTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onAutoCompleteCompleted = (ToastificationItem item) {};
+      final void Function(ToastificationItem item, DismissDirection direction) onDismissed = (
+        ToastificationItem item,
+        DismissDirection direction,
+      ) {};
 
       final callbacks = ToastificationCallbacks(
         onTap: onTap,
@@ -25,8 +24,7 @@ void main() {
 
       expect(callbacks.onTap, equals(onTap));
       expect(callbacks.onCloseButtonTap, equals(onCloseButtonTap));
-      expect(
-          callbacks.onAutoCompleteCompleted, equals(onAutoCompleteCompleted));
+      expect(callbacks.onAutoCompleteCompleted, equals(onAutoCompleteCompleted));
       expect(callbacks.onDismissed, equals(onDismissed));
     });
 
@@ -40,14 +38,13 @@ void main() {
     });
 
     test('props should contain all callbacks', () {
-      final ValueChanged<ToastificationItem> onTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onCloseButtonTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onAutoCompleteCompleted =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onDismissed =
-          (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onCloseButtonTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onAutoCompleteCompleted = (ToastificationItem item) {};
+      final void Function(ToastificationItem item, DismissDirection direction) onDismissed = (
+        ToastificationItem item,
+        DismissDirection direction,
+      ) {};
 
       final callbacks = ToastificationCallbacks(
         onTap: onTap,
@@ -65,14 +62,13 @@ void main() {
     });
 
     test('should be equal if all properties are equal', () {
-      final ValueChanged<ToastificationItem> onTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onCloseButtonTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onAutoCompleteCompleted =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onDismissed =
-          (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onCloseButtonTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onAutoCompleteCompleted = (ToastificationItem item) {};
+      final void Function(ToastificationItem item, DismissDirection direction) onDismissed = (
+        ToastificationItem item,
+        DismissDirection direction,
+      ) {};
 
       final callbacks1 = ToastificationCallbacks(
         onTap: onTap,
@@ -92,14 +88,13 @@ void main() {
     });
 
     test('should have the same hashcode if all properties are equal', () {
-      final ValueChanged<ToastificationItem> onTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onCloseButtonTap =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onAutoCompleteCompleted =
-          (ToastificationItem item) {};
-      final ValueChanged<ToastificationItem> onDismissed =
-          (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onCloseButtonTap = (ToastificationItem item) {};
+      final ValueChanged<ToastificationItem> onAutoCompleteCompleted = (ToastificationItem item) {};
+      final void Function(ToastificationItem item, DismissDirection direction) onDismissed = (
+        ToastificationItem item,
+        DismissDirection direction,
+      ) {};
 
       final callbacks1 = ToastificationCallbacks(
         onTap: onTap,

@@ -28,7 +28,7 @@ class ToastificationCallbacks extends Equatable {
   final ValueChanged<ToastificationItem>? onAutoCompleteCompleted;
 
   /// Called when the toast is dismissed by a user gesture (e.g. a swipe).
-  final ValueChanged<ToastificationItem>? onDismissed;
+  final void Function(ToastificationItem item, DismissDirection direction)? onDismissed;
 
   @override
   List<Object?> get props => [
